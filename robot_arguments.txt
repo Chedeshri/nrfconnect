@@ -1,0 +1,51 @@
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
+# Explanation for the variable "world" :                            #
+#                                                                   #
+# Usage:                                                            #
+#   To set the type of connection, real world or simulation world   #
+#                                                                   #
+# Possible Values: (Case-sensitive)                                 #
+#   1. REAL                                                         #
+#   2. SIMULATION                                                   #
+#                                                                   #
+# Examples:                                                         #
+#   To connect to real hardware setup with ems dongle and so on ,   #
+#   set the variable world to REAL as shown below,                  #
+#   --variable world:REAL                                           #
+#   To connect to NSC simulation, set as below                      #
+#   --variable world:SIMULATION                                     #
+#                                                                   #
+# Important Note:                                                   #
+#   Do not give space after colon(:),                               #
+#   right setting ->  --variable world:'REAL'                       #
+#   wrong setting ->  --variable world: 'REAL'                       #
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
+--variable world:'REAL'
+
+#for the real world
+--variable edo_com_port:COM58
+
+#for the simulation world
+--variable  path:C:\Work_2\RoboTT\Simulation\NSC_Simulation_Bosch_All_V1.03_Beta\NSC_Sim_BOSCH
+--variable  config_path:C:\Work_2\RoboTT\Simulation\NSC_Simulation_Bosch_All_V1.03_Beta\NSC_Sim_BOSCH\config
+--variable  config_file:C:\Work_2\RoboTT\Simulation\NSC_Simulation_Bosch_All_V1.03_Beta\EL_MID_SIM.ncfg
+--variable  CanConfig_file:C:\Users\mau2cob\PycharmProjects\HybMan_EL_Functional\TestRigs\default_config.csv
+#Bus type possible values Buderus  or Bosch
+--variable bus_type:'Buderus'
+
+# emspd path
+--variable emspd_path:..\..\TestRigs\HybMan.emspd
+
+# Sensor NTC curve xml path
+--variable sensor_file:..\..\TestRigs\sensor.xml
+
+
+##### Test tags selection
+--exclude test_mode
+--exclude noise_reduction
+--exclude initHybMan
+--exclude HPPowerControl
+--include CANEMS_Interface_Test
+
+#--dryrun
+--debug C:\D_Drive\EL_HybMan.txt
